@@ -1,12 +1,18 @@
-/*
- Basic MQTT example with Authentication
- 
-  - connects to an MQTT server, providing username
-    and password
-  - publishes "hello world" to the topic "outTopic"
-  - subscribes to the topic "inTopic"
-*/
+/* 
+Toggle switch to send relevant mqtt message to turn on/off device.
 
+Code originated in the Debounce Example and has been hacked to bits
+ 
+ created 21 November 2006
+ by David A. Mellis
+ modified 30 Aug 2011
+ by Limor Fried
+ modified 28 Dec 2012
+ by Mike Walters
+ 
+ This example code is in the public domain.
+ http://www.arduino.cc/en/Tutorial/Debounce
+ */
 #include <SPI.h>
 #include <Ethernet.h>
 #include <PubSubClient.h>
@@ -30,9 +36,8 @@ const int ledPin =  13;      // the number of the LED pin
 
 // Variables will change:
 int ledState = HIGH;         // the current state of the output pin
-int buttonState;
+int buttonState;	     // the current reading from the input pin
 char* swState;
-// the current reading from the input pin
 int lastButtonState = LOW;   // the previous reading from the input pin
 
 // the following variables are long's because the time, measured in miliseconds,

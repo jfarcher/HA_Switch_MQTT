@@ -11,7 +11,6 @@ Code originated in the Debounce Example and has been hacked to bits
  by Mike Walters
  
  This example code is in the public domain.
- 
  http://www.arduino.cc/en/Tutorial/Debounce
  */
 
@@ -42,9 +41,12 @@ int lastButtonState = LOW;   // the previous reading from the input pin
 // will quickly become a bigger number than can be stored in an int.
 long lastDebounceTime = 0;  // the last time the output pin was toggled
 long debounceDelay = 50;    // the debounce time; increase if the output flickers
+
+//callback for MQTT - not sure if this is required due to us not receiving
 void callback(char* topic, byte* payload, unsigned int length) {
  // handle message arrived
 }
+
 PubSubClient client(MQTT_SERVER,1883,callback);
 void setup() {
   pinMode(buttonPin, INPUT);
@@ -52,7 +54,6 @@ void setup() {
     Serial.begin(9600);
      byte i;
   byte dsAddress[8]; //ds on pin 8
-  
   
   Serial.begin(9600);
   delay( 500 );

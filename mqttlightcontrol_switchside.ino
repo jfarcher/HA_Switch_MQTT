@@ -1,6 +1,21 @@
+/* 
+Toggle switch to send relevant mqtt message to turn on/off device.
+
+Code originated in the Debounce Example and has been hacked to bits
+ 
+ created 21 November 2006
+ by David A. Mellis
+ modified 30 Aug 2011
+ by Limor Fried
+ modified 28 Dec 2012
+ by Mike Walters
+ 
+ This example code is in the public domain.
+ 
+ http://www.arduino.cc/en/Tutorial/Debounce
+ */
+
 #include <PubSubClient.h>
-
-
 #include <OneWire.h>
 #include <SPI.h>
 #include <Ethernet.h>

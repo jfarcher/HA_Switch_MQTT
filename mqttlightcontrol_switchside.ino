@@ -44,15 +44,7 @@ long lastDebounceTime = 0;  // the last time the output pin was toggled
 long debounceDelay = 50;    // the debounce time; increase if the output flickers
 void callback(char* topic, byte* payload, unsigned int length) {
  // handle message arrived
- Serial.println("Callback");
- Serial.print("Topic:");
- Serial.println(topic);
- Serial.print("Length:");
- Serial.println(length);
- Serial.print("Payload:");
- Serial.write(payload,length);
- Serial.println();
- }
+}
 PubSubClient client(MQTT_SERVER,1883,callback);
 void setup() {
   pinMode(buttonPin, INPUT);

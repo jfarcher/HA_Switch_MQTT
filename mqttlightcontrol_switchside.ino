@@ -93,9 +93,9 @@ void setup()
   }
   delay(10);
   Serial.println();
-if (client.connect("arduinoClient")) {      // connecting to MQTT server
-   Serial.println("Connected to MQTT");      // Milestone for connection debugging
-  }
+//if (client.connect("SW1")) {      // connecting to MQTT server
+//   Serial.println("Connected to MQTT");      // Milestone for connection debugging
+//  }
 }
 
 void loop()
@@ -120,6 +120,7 @@ void loop()
       ledState = !ledState;
       Serial.println(ledState);
       Serial.println("sending state");
+      client.connect("SW1");
       if (ledState == 0){
         swState = "2-40";
       }
@@ -139,7 +140,7 @@ void loop()
 
   
   // set the LED using the state of the button:
-  digitalWrite(ledPin, ledState);
+//  digitalWrite(ledPin, ledState);
 
   // save the reading.  Next time through the loop,
   // it'll be the lastButtonState:
